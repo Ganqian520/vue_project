@@ -23,7 +23,7 @@
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登陆</el-button>
+          <el-button type="primary" @click="onlogin">登陆</el-button>
         </el-form-item>
       </el-form>
       <!-- 注册和找回密码链接 -->
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import login from '@/src/api/user.js'
 
 export default {
   name: "LoginIndex",
@@ -62,14 +63,30 @@ export default {
     };
   },
   methods: {
-    login() {
+    onlogin() {
       this.$refs.loginFormRef.validate(async valid => {
-        if (!valid) return;
-        const { data: res} = await this.$http.post("login",this.loginForm);
-        if(res.meta.status !== 200) return this.$message.error("登陆失败！");
-        this.$message.success("登陆成功");
+        if (!valid) {
+			return
+		}
+		this.login()
       })
-    }
+    },
+	login(){
+		login(this.loginForm).then(res => {	
+		  // 登录成功
+		  this.$message({
+		    message: '登录成功',
+		    type: 'success'
+		  })
+		  // 跳转到首页		
+		  this.$router.push({
+		    name: 'index'
+		  })
+		}).catch(err => { // 登录失败
+		  console.log('登录失败', err)
+		  this.$message.error('登录失败，手机号或验证码错误')	
+		})
+	}
   }
 };
 </script>

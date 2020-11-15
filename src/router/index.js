@@ -4,11 +4,21 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login'
 import Register from '@/views/register'
 import Findpwd from '@/views/findpwd'
+import Index from '@/views/Index.vue'
 
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
+  {
+	path: '',
+	redirect: '/index'
+  },
+  {
+	path: '/index',
+	name: 'index',
+	component: Index
+  },
   {
     path: '/login',
     name: 'login',
