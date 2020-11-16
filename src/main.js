@@ -7,7 +7,7 @@ import './plugins/element.js'
 import axios from 'axios'
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8080/api'
-Vue.prototype.$http = axios
+Vue.prototype.axios = axios
 
 Vue.config.productionTip = false
 
