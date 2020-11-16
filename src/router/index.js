@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login'
 import Register from '@/views/register'
 import Findpwd from '@/views/findpwd'
-import Index from '@/views/Index.vue'
+import Index from '@/views/index'
 
 Vue.use(VueRouter)
 

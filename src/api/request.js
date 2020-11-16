@@ -1,5 +1,5 @@
 import axios from 'axios'
-//实例化一个axios对象
+//实例化一个axios
 export function request(config){
 	const instance = axios.creat({
 		baseURL:'',
