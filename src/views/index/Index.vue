@@ -1,16 +1,18 @@
-
 <template>
-	<div>首页</div>
+  <div><strong>Hello world!</strong></div>
 </template>
 
 <script>
-	export default{
-		name:index,
-		data(){
-			
-		}
-	}
+export default {
+  name: "Index",
+  data() {
+    return{
+
+    };
+  }
+}
 </script>
 
-<style>
+<style lang="less" scoped>
+
 </style>
