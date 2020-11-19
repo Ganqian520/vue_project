@@ -72,12 +72,14 @@ export default {
         .then(ret => {
           if(ret.data==1) {
             alert('登录成功');
+             this.$router.push({ path:'/index'  })  //跳转首页
           }
           else {
             alert('登录失败');
           }
         })
-    }
+    },
+    
   }
 };
 </script>
