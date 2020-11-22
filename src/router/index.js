@@ -9,17 +9,24 @@ import Topbar from '../components/Topbar.vue'
 import Footer from '../components/Footbar.vue'
 import Famouseteacher from '../views/FamousTeacher.vue'
 import Famousedocor from '../views/FamousDocor.vue'
+import Admin from '../views/Admin.vue'
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
 	{
+		path:'/admin',
+		component:Admin
+	},
+	{
 		path:'/famousedocor',
-		component:Famousedocor
+		component:Famousedocor,
+		name:'名医馆'
 	},
 	{
 		path:'/famousteacher',
-		component: Famouseteacher
+		component: Famouseteacher,
+		name:'名师堂'
 	},
   {
 	path: '',

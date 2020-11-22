@@ -4,29 +4,46 @@
 		<el-menu :default-active="$route.path" class="el-menu-demo l" mode="horizontal"  router >
 			<el-menu-item index="/index">
 				首页
-			</el-menu-item>
-			<el-menu-item index="/famousteacher">
-				名师堂
-			</el-menu-item>
-			<el-menu-item index="/famousedocor">
-				名医馆
-			</el-menu-item>
-			<el-menu-item index="/">
-				广播站
-			</el-menu-item>
-			<el-menu-item index="/">
-				支援活动
 			</el-menu-item>				
-			 <el-submenu index="6">
-			    <template slot="title">更多</template>
-			    <el-menu-item index="6-1">
-					<router-link to="/index" tag="li"> 发布活动</router-link>
-				</el-menu-item>
-			    <el-menu-item index="6-2">
-					<router-link to="/index" tag="li"> 申请公告</router-link>
-				</el-menu-item>
-			  </el-submenu>
+			 <el-submenu index="1">
+			    <template slot="title">{{$route.name | showName}}</template>
+			    <el-menu-item index="/famousteacher">
+			   	名师堂
+			   </el-menu-item>
+			   <el-menu-item index="/famousedocor">
+			   	名医馆
+			   </el-menu-item>
+			   <el-menu-item index="/">
+			   	支援活动
+			   </el-menu-item>		
+			   <el-menu-item index="/">
+			   	申请活动
+			   </el-menu-item>		
+			</el-submenu>
+			
+			<el-submenu index="2">
+			    <template slot="title">管理员</template>
+			    <el-menu-item index="/">
+			   	审核名医馆
+			   </el-menu-item>
+			   <el-menu-item index="/">
+			   	审核名师堂
+			   </el-menu-item>
+			   <el-menu-item index="/">
+			   	审核活动
+			   </el-menu-item>			
+			</el-submenu>
 	
+			<el-submenu index="3">
+				<template slot="title">超级管理员</template>
+				<el-menu-item index="/">
+				权限管理
+			   </el-menu-item>
+			   <el-menu-item index="/">
+				用户管理
+			   </el-menu-item>
+			  			
+			</el-submenu>
 		</el-menu>
 		<div class="r">
 			<el-button icon="el-icon-search" circle></el-button>
@@ -41,7 +58,17 @@
 </template>
 
 <script>
+	import Vue from 'vue'
+	Vue.filter("showName",(data)=>{
+		if(data==='index'){
+			return '普通用户'
+		}
+		else{
+			return data
+		}
+	})
 	export default {
+		
 	    data() {
 	      return {
 	      };

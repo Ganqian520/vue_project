@@ -34,7 +34,7 @@ export default {
 	},
 	methods: {
 	  getPath(){
-		  if(this.$route.path==='/login'||this.$route.path==='/register'){
+		  if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'){
 			  this.isShow=true
 		  }else{
 			  this.isShow=false
@@ -43,7 +43,7 @@ export default {
 	  }
 	},
 	mounted() {
-		if(this.$route.path==='/login'||this.$route.path==='/register'){
+		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'){
 					  this.isShow=true
 		}else{
 					  this.isShow=false
