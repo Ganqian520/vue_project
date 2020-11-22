@@ -4,12 +4,23 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login'
 import Register from '@/views/register'
 import Findpwd from '@/views/findpwd'
-import Index from '@/views/index'
-
+import Index from '../views/index/Index.vue'
+import Topbar from '../components/Topbar.vue'
+import Footer from '../components/Footbar.vue'
+import Famouseteacher from '../views/FamousTeacher.vue'
+import Famousedocor from '../views/FamousDocor.vue'
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
+	{
+		path:'/famousedocor',
+		component:Famousedocor
+	},
+	{
+		path:'/famousteacher',
+		component: Famouseteacher
+	},
   {
 	path: '',
 	redirect: '/index'
