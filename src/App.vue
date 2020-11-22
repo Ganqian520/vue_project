@@ -1,7 +1,8 @@
 <template>
-  <div id="app">    
-	<el-container>
-	  <el-header>
+  <div id="app"> 
+	 <router-view v-show="isShow" />
+	<el-container v-show="!isShow">
+	  <el-header >
 		 <topbar></topbar>
 	  </el-header>
 	  <el-main style="padding:20px 200px;">
@@ -19,10 +20,36 @@
 	import footbar from './components/Footbar.vue'
 export default {
   name: 'app', 
+  data(){
+	  return{
+		  isShow:false
+	  }
+  },
   components:{
 	  topbar,
 	  footbar
-  }
+  },
+	watch: {
+	  '$route':'getPath'
+	},
+	methods: {
+	  getPath(){
+		  if(this.$route.path==='/login'||this.$route.path==='/register'){
+			  this.isShow=true
+		  }else{
+			  this.isShow=false
+		  }
+	    
+	  }
+	},
+	mounted() {
+		if(this.$route.path==='/login'||this.$route.path==='/register'){
+					  this.isShow=true
+		}else{
+					  this.isShow=false
+		}
+	}
+  
 }
 </script>
 

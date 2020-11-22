@@ -1,7 +1,7 @@
 <template>
 	<div id="box">
 		<div class="circle l"></div>
-		<el-menu :default-active="$route.path" class="el-menu-demo l" mode="horizontal" @select="handleSelect" router >
+		<el-menu :default-active="$route.path" class="el-menu-demo l" mode="horizontal"  router >
 			<el-menu-item index="/index">
 				首页
 			</el-menu-item>
@@ -32,8 +32,8 @@
 			<el-button icon="el-icon-search" circle></el-button>
 			<el-button icon="el-icon-upload2" circle></el-button>
 			<div id="login">
-				<el-button  icon="el-icon-user-solid">登录</el-button>
-				<el-button  icon="el-icon-edit">注册</el-button>
+				<el-button  icon="el-icon-user-solid" @click="login()">登录</el-button>
+				<el-button  icon="el-icon-edit" @click="register()">注册</el-button>
 			</div>
 			
 		</div>
@@ -47,9 +47,12 @@
 	      };
 	    },
 	    methods: {
-	      handleSelect(key, keyPath) {
-	       
-	      }
+	      login(){
+			  this.$router.push('/login')
+		  },
+		  register(){
+		  			  this.$router.push('/register')
+		  },
 	    }
 	  }
 </script>
