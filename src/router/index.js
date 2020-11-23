@@ -10,10 +10,15 @@ import Footer from '../components/Footbar.vue'
 import Famouseteacher from '../views/FamousTeacher.vue'
 import Famousedocor from '../views/FamousDocor.vue'
 import Admin from '../views/Admin.vue'
+import UserManage from '../views/UserManage.vue'
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
+	{
+		path:'/usermanage',
+		component:UserManage
+	},
 	{
 		path:'/admin',
 		component:Admin

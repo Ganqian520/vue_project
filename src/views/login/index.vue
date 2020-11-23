@@ -63,20 +63,20 @@ export default {
   },
   methods: {
     login:function () {
-      return this.axios.get('http://localhost:8080/api/user/login',{
-        params:{
-          username:this.loginForm.username,
-          pwd:this.loginForm.password
-        }
+      return this.axios.post('http://localhost:8080/login/check',{
+        
+          "username":this.loginForm.username,
+          "pwd":this.loginForm.password
+        
       })
         .then(ret => {
-          if(ret.data==1) {
-            alert('登录成功');
-             this.$router.push({ path:'/index'  })  //跳转首页
-          }
-          else {
-            alert('登录失败');
-          }
+         console.log(ret.data);
+         if(ret.data.status=="200") {
+           alert('登录成功');
+           this.$router.push('/index');
+           localStorage.role = ret.data.context.roleList.length
+           localStorage.token= ret.data.context.token
+         }
         })
     },
     

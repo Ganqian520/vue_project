@@ -1,7 +1,7 @@
 <template>
   <div id="app"> 
-	 <router-view v-show="isShow" />
-	<el-container v-show="!isShow">
+	 <router-view v-if="isShow" />
+	<el-container v-if="!isShow">
 	  <el-header >
 		 <topbar></topbar>
 	  </el-header>
@@ -34,7 +34,7 @@ export default {
 	},
 	methods: {
 	  getPath(){
-		  if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'){
+		  if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'){
 			  this.isShow=true
 		  }else{
 			  this.isShow=false
@@ -43,7 +43,7 @@ export default {
 	  }
 	},
 	mounted() {
-		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'){
+		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'){
 					  this.isShow=true
 		}else{
 					  this.isShow=false

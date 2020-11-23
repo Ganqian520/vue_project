@@ -134,16 +134,15 @@ export default {
   methods: {
 
     login() {
-        return this.axios.get('http://localhost:8080/api/user/register',{
-        params:{
-          username:this.registerForm.username,
-          nickname:this.registerForm.nickname,
-          phone:this.registerForm.phone,
-          pwd:this.registerForm.pwd,
-          school:this.registerForm.school,
-          parentname:this.registerForm.parentname
-        }
-      })
+        return this.axios.post('http://localhost:8080/login/register',{
+        
+          
+          "username":this.registerForm.username,
+          "nickname":this.registerForm.nickname,
+          "phone":this.registerForm.phone,
+          "pwd":this.registerForm.pwd,
+          "school":this.registerForm.school,
+          "parentname":this.registerForm.parentname         })
         .then(ret => {
           if(ret.data==0) {
             alert('用户名存在,请重新输入');
