@@ -1,85 +1,24 @@
 <template>
 	<div id="box" >
-		<div id="content" >
+		<div id="content" v-for="data in datalist" :key="data.id" @click="enterDetail(data.id)" >
 			<div>
-			<img src="" class="l" />
+			<img src="../../../public/imgs/1.jpg" class="l" />
 			</div>
 			<div class="clear">
-				<span class="l" style="font-size: 18px;font-weight: bold;">提高小学生的作文能力的基本途径</span>
-				<i class="el-icon-time r">1999.12.13</i>
+				<span class="l" style="font-size: 18px;font-weight: bold;">{{data.title}}</span>
+				<i class="el-icon-time r">{{data.time}}</i>
 			</div>
 			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
-				<span style="margin-right: 20px;display: block;color: #999999;">名师指导：提高小学生的作文能力的基本途径，一篇文章怎样开头，采用哪种方法，一定要从文章中心表达的需要出发，适应不同体裁的特点做到新颖明快，言简意赅。</span>
+				<span style="margin-right: 20px;display: block;color: #999999;">{{data.content}}</span>
 			</div>
 			<div style="position: absolute;top: 140px;text-align: left;left: 190px;color: #999999;">
 				<i class="el-icon-user-solid" style="font-size: 18px;"></i>
-				<span style="margin:0 10px;">余老师</span>
-				<el-button size="small" style="width: 80px;">语文</el-button>
-				<i class="el-icon-thumb" style="position: absolute;right: -300px;bottom: 0;">777</i>
-				<i class="el-icon-thumb" style="position: absolute;right: -360px;bottom: 0;">777</i>
+				<span style="margin:0 10px;">{{data.autor}}</span>
 				
 			</div>
 		</div>
-		<div id="content" >
-			<div>
-			<img src="" class="l" />
-			</div>
-			<div class="clear">
-				<span class="l" style="font-size: 18px;font-weight: bold;">提高小学生的作文能力的基本途径</span>
-				<i class="el-icon-time r">1999.12.13</i>
-			</div>
-			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
-				<span style="margin-right: 20px;display: block;color: #999999;">名师指导：提高小学生的作文能力的基本途径，一篇文章怎样开头，采用哪种方法，一定要从文章中心表达的需要出发，适应不同体裁的特点做到新颖明快，言简意赅。</span>
-			</div>
-			<div style="position: absolute;top: 140px;text-align: left;left: 190px;color: #999999;">
-				<i class="el-icon-user-solid" style="font-size: 18px;"></i>
-				<span style="margin:0 10px;">余老师</span>
-				<el-button size="small" style="width: 80px;">语文</el-button>
-				<i class="el-icon-thumb" style="position: absolute;right: -300px;bottom: 0;">777</i>
-				<i class="el-icon-thumb" style="position: absolute;right: -360px;bottom: 0;">777</i>
-				
-			</div>
-		</div>
-		<div id="content" >
-			<div>
-			<img src="" class="l" />
-			</div>
-			<div class="clear">
-				<span class="l" style="font-size: 18px;font-weight: bold;">提高小学生的作文能力的基本途径</span>
-				<i class="el-icon-time r">1999.12.13</i>
-			</div>
-			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
-				<span style="margin-right: 20px;display: block;color: #999999;">名师指导：提高小学生的作文能力的基本途径，一篇文章怎样开头，采用哪种方法，一定要从文章中心表达的需要出发，适应不同体裁的特点做到新颖明快，言简意赅。</span>
-			</div>
-			<div style="position: absolute;top: 140px;text-align: left;left: 190px;color: #999999;">
-				<i class="el-icon-user-solid" style="font-size: 18px;"></i>
-				<span style="margin:0 10px;">余老师</span>
-				<el-button size="small" style="width: 80px;">语文</el-button>
-				<i class="el-icon-thumb" style="position: absolute;right: -300px;bottom: 0;">777</i>
-				<i class="el-icon-thumb" style="position: absolute;right: -360px;bottom: 0;">777</i>
-				
-			</div>
-		</div>
-		<div id="content" >
-			<div>
-			<img src="" class="l" />
-			</div>
-			<div class="clear">
-				<span class="l" style="font-size: 18px;font-weight: bold;">提高小学生的作文能力的基本途径</span>
-				<i class="el-icon-time r">1999.12.13</i>
-			</div>
-			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
-				<span style="margin-right: 20px;display: block;color: #999999;">名师指导：提高小学生的作文能力的基本途径，一篇文章怎样开头，采用哪种方法，一定要从文章中心表达的需要出发，适应不同体裁的特点做到新颖明快，言简意赅。</span>
-			</div>
-			<div style="position: absolute;top: 140px;text-align: left;left: 190px;color: #999999;">
-				<i class="el-icon-user-solid" style="font-size: 18px;"></i>
-				<span style="margin:0 10px;">余老师</span>
-				<el-button size="small" style="width: 80px;">语文</el-button>
-				<i class="el-icon-thumb" style="position: absolute;right: -300px;bottom: 0;">777</i>
-				<i class="el-icon-thumb" style="position: absolute;right: -360px;bottom: 0;">777</i>
-				
-			</div>
-		</div>
+		
+		
 	
 	
 		
@@ -87,6 +26,25 @@
 </template>
 
 <script>
+	export default{
+		data(){
+			return{
+				datalist:[]
+			}
+		},
+		methods:{
+			enterDetail(id){
+				localStorage.contentId = id
+				this.$router.push('/detail')
+			}
+		},
+		mounted() {
+		return this.axios.post('http://localhost:8080/famousteacher/getmsg') //当页面加载时,返回
+        .then(ret => {
+			this.datalist=ret.data
+		})
+		}
+	}
 </script>
 
 <style scoped lang="less">

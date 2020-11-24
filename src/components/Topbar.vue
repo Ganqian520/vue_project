@@ -36,7 +36,7 @@
 	
 			<el-submenu index="3" v-if="adminShow">
 				<template slot="title">超级管理员</template>
-				<el-menu-item index="/">
+				<el-menu-item index="/powermanage">
 				权限管理
 			   </el-menu-item>
 			   <el-menu-item index="/usermanage">

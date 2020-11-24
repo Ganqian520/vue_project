@@ -11,10 +11,21 @@ import Famouseteacher from '../views/FamousTeacher.vue'
 import Famousedocor from '../views/FamousDocor.vue'
 import Admin from '../views/Admin.vue'
 import UserManage from '../views/UserManage.vue'
+import PowerManage from '../views/PowerManage.vue'
+import Detail from '../views/famousteacher/Detail.vue'
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
+	{
+		path:'/detail',
+		component:Detail,
+		name:'文章内容'
+	},
+	{
+		path:'/powermanage',
+		component:PowerManage
+	},
 	{
 		path:'/usermanage',
 		component:UserManage
