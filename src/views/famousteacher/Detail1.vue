@@ -13,7 +13,7 @@ export default {
             datalist:[],
             contentId:localStorage.contentId ,
             content:'',
-            api:'/getmsg'
+        
         }
     },
     // beforeRouteEnter (to, from, next) {
@@ -27,15 +27,18 @@ export default {
     //     }
     // },
     mounted() {
-		return this.axios.post(`http://localhost:8080/famousteacher${this.api}`) //当页面加载时,返回
+        console.log(this.contentId)
+		return this.axios.post('http://localhost:8080/famousteacher/getauditmsg') //当页面加载时,返回
         .then(ret => {
            console.log(ret.data)
-            this.datalist = ret.data
+           this.datalist = ret.data
             for(let i=0;i<this.datalist.length;i++){
                 if(this.datalist[i].id==this.contentId){
                     this.content = this.datalist[i].content
                 }
-            }     
+            }
+           // this.datalist = ret.data
+              
            // console.log(this.content);
 		})
 		}

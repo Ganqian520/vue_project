@@ -50,9 +50,11 @@
 			    <el-tab-pane label="全部文章" name="all" >
 					<articlecontent ></articlecontent>
 				</el-tab-pane>
-		
+
 			  </el-tabs>
+			  <el-button @click="submit()">申请文章</el-button>
 		</main>
+	
 	</div>
 </template>
 
@@ -72,7 +74,10 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
-      }
+	  },
+	  submit(){
+		  this.$router.push('/submitteacher')
+	  }
     }
   };
 </script>

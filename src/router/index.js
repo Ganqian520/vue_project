@@ -13,10 +13,29 @@ import Admin from '../views/Admin.vue'
 import UserManage from '../views/UserManage.vue'
 import PowerManage from '../views/PowerManage.vue'
 import Detail from '../views/famousteacher/Detail.vue'
+import FamouseteacherAudit from '../views/FamousTeacherAudit.vue'
+import SubmitTeacher from '../views/famousteacher/Submit.vue'
+import Detail1 from '../views/famousteacher/Detail1.vue'
+import HA from '../views/123.vue'
 Vue.use(VueRouter)
 
 // 路由配置表
-const routes = [
+const routes = [{
+	path:'/123',
+	component:HA
+},
+	{
+			path:'/detail1',
+			component:Detail1
+	},
+	{
+		path:'/submitteacher',
+		component:SubmitTeacher
+	},
+	{
+			path:'/famouseteacheraudit',
+			component:FamouseteacherAudit
+	},
 	{
 		path:'/detail',
 		component:Detail,
