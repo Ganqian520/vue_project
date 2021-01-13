@@ -47,11 +47,15 @@ export default {
 		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'||this.$route.path==='/powermanage'){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			this.isShow=true
 =======
 		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'){
 					  this.isShow=true
 >>>>>>> parent of c72b53a... 改动
+=======
+					  this.isShow=true
+>>>>>>> parent of 28027cf... 123
 =======
 					  this.isShow=true
 >>>>>>> parent of 28027cf... 123
