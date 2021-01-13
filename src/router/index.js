@@ -19,6 +19,7 @@ import SubmitTeacher from '../views/famousteacher/Submit.vue'
 import Detail1 from '../views/famousteacher/Detail1.vue'
 import HA from '../views/123.vue'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import hsa from '../views/Broadcast.vue'
 import ri from '../views/13.vue'
 import hdsq from '../views/huodongshenqing.vue'
@@ -71,6 +72,12 @@ const routes = [
 		name:'红领巾广播'
 	},
 	{
+=======
+Vue.use(VueRouter)
+
+// 路由配置表
+const routes = [{
+>>>>>>> parent of 28027cf... 123
 =======
 Vue.use(VueRouter)
 
