@@ -1,7 +1,7 @@
 <template>
 		<el-container>
 		  <el-header>
-			  <el-page-header  @back="back()" content="">
+			  <el-page-header  @back="back()" content="日志管理">
 			  </el-page-header>
 			 
 		  </el-header>
@@ -10,8 +10,8 @@
 		    <el-main>
 				<el-form  class="demo-form-inline" style="text-align: left;">			 
 				  <el-form-item>
-				    <el-button type="primary" 
->日志管理</el-button>
+				    <el-button type="primary" @click="addDiaLog = true
+">增加角色</el-button>
 				  </el-form-item>
 				</el-form>
 				<el-table
@@ -159,7 +159,7 @@ function padLeftZero(str) {
 	      };
 		},
 		mounted:function(){
-     	return this.axios.post('http://127.0.0.1:8080/Logging_event/getloggingMsg') //当页面加载时,返回
+     	return this.axios.post('http://localhost:8080/Logging_event/getloggingMsg') //当页面加载时,返回
         .then(ret => {
 			console.log(ret.data);
           this.tableData=ret.data;console.log(this.tableData)
@@ -179,7 +179,7 @@ function padLeftZero(str) {
 				
 			},
 			addRole(){ 								// console.log(this.$refs.username.$el)
-				 return this.axios.post('http://127.0.0.1:8080/role/addRole',{
+				 return this.axios.post('http://localhost:8080/role/addRole',{
 					 
         
           "rolename":this.addData.name,
@@ -205,7 +205,7 @@ function padLeftZero(str) {
 			deleteRole(data){
 				console.log(data)
 				
-				return this.axios.post('http://127.0.0.1:8080/role/deleteRole',{
+				return this.axios.post('http://localhost:8080/role/deleteRole',{
 					'id' : data
 				}).then(res=>{
 					if(res.status==200){

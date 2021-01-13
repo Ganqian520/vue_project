@@ -113,7 +113,7 @@
 	      };
 		},
 		mounted:function(){
-     	return this.axios.post('http://127.0.0.1:8080/role/findAll') //当页面加载时,返回
+     	return this.axios.post('http://localhost:8080/role/findAll') //当页面加载时,返回
         .then(ret => {
           this.tableData=ret.data.context;
         })
@@ -129,7 +129,7 @@
 				
 			},
 			addRole(){ 								// console.log(this.$refs.username.$el)
-				 return this.axios.post('http://127.0.0.1:8080/role/addRole',{
+				 return this.axios.post('http://localhost:8080/role/addRole',{
 					 
         
           "rolename":this.addData.name,
@@ -156,7 +156,7 @@
 			deleteRole(data){
 				console.log(data)
 				
-				return this.axios.post('http://127.0.0.1:8080/role/deleteRole',{
+				return this.axios.post('http://localhost:8080/role/deleteRole',{
 					'id' : data
 				}).then(res=>{
 					if(res.status==200){

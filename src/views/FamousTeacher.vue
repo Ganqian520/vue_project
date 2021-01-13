@@ -1,7 +1,49 @@
 <template>
 	<div id="box">
 		
-		
+		<aside class="r">
+			<div id="aside-head" class="clear">
+				<span class="l" style="font-weight: bold;">热门文章</span>
+				<span class="r"><i class="el-icon-refresh-right"></i>换一批</span>
+			</div>
+			<div class="aside-box">
+				
+				<div id="aside-content">
+					<h2>界面设计必备，常用字体规范</h2>
+					<p style="margin: 0;">这不仅仅是一篇经验，而是前辈用日积月累得工作心得，用笔记用脑想，最重要得是要...</p>
+				</div>
+				<div id="aside-foot">
+					<i class="el-icon-user-solid" style="font-size: 25px;"></i>
+					<span style="margin:0 20px 0 5px;">yqmyqm</span>
+					<i class="el-icon-time ">1999.12.13</i>
+				</div>
+			</div>
+			
+			<div class="aside-box">
+				
+				<div id="aside-content">
+					<h2>界面设计必备，常用字体规范</h2>
+					<p style="margin: 0;">这不仅仅是一篇经验，而是前辈用日积月累得工作心得，用笔记用脑想，最重要得是要...</p>
+				</div>
+				<div id="aside-foot">
+					<i class="el-icon-user-solid" style="font-size: 25px;"></i>
+					<span style="margin:0 20px 0 5px;">yqmyqm</span>
+					<i class="el-icon-time ">1999.12.13</i>
+				</div>
+			</div>
+			
+			<div class="aside-box">
+				<div id="aside-content">
+					<h2>界面设计必备，常用字体规范</h2>
+					<p style="margin: 0;">这不仅仅是一篇经验，而是前辈用日积月累得工作心得，用笔记用脑想，最重要得是要...</p>
+				</div>
+				<div id="aside-foot">
+					<i class="el-icon-user-solid" style="font-size: 25px;"></i>
+					<span style="margin:0 20px 0 5px;">yqmyqm</span>
+					<i class="el-icon-time ">1999.12.13</i>
+				</div>
+			</div>
+		</aside>
 		
 		<main>
 			<el-tabs v-model="activeName" @tab-click="handleClick">
@@ -52,7 +94,7 @@
 		/* height: 1200px; */
 	}
 	main{
-		width: 100%;
+		width: 750px;
 		height: 100%;
 		/* border: 1px solid black; */
 		background-color: white;

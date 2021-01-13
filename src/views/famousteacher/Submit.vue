@@ -7,19 +7,13 @@
   <el-form-item label="作者">
     <el-input v-model="form.author"></el-input>
   </el-form-item>
- 
-   <div class="quill-box">
-  <template>
-    <quill-editor v-model="content"
-                  :options="editorOption"
-                  ref="content">
-    </quill-editor>
-  </template>
-  </div>
+  <el-form-item label="内容">
+    <el-input type="textarea" v-model="form.desc"></el-input>
+  </el-form-item>
   <el-form-item>
       标题图片
       <el-upload :on-success="geturl"
-  action="http://127.0.0.1:8080/famousteacher/uploadImg"
+  action="http://localhost:8080/famousteacher/uploadImg"
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
@@ -36,30 +30,11 @@
 </el-form>
 
     </div>
-   
 </template>
 <script>
-import { quillEditor, Quill } from 'vue-quill-editor'
-const toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],
-  ['blockquote', 'code-block'],
-  [{'list': 'ordered'}, {'list': 'bullet'}],
-  [{'indent': '-1'}, {'indent': '+1'}],
-  [{'color': []}, {'background': []}],
-  [{'align': []}],
-  ['link', 'image'],
-  ['clean'],
-  [{'size': ['small', false, 'large', 'huge']}],
-  [{'header': [1, 2, 3, 4, 5, 6, false]}],
-  [{'font': []}]
-]
   export default {
-     components: {
-    'quill-editor': quillEditor
-  },
     data() {
       return {
-        content:'',
            dialogImageUrl: '',
         dialogVisible: false,
         form: {
@@ -68,15 +43,7 @@ const toolbarOptions = [
           url:'',
           desc: ''
         },
-        img:[],
-        editorOption: {
-        placeholder: '提示语',
-        modules: {
-          toolbar: {
-            container: toolbarOptions,
-          }
-        }
-      }
+        img:[]
       }
     },
     methods: {
@@ -94,16 +61,16 @@ const toolbarOptions = [
       },
       onSubmit() {
         
-       return  this.axios.post('http://127.0.0.1:8080/famousteacher/submitFamousteacherArticlemsg',{
+       return  this.axios.post('http://localhost:8080/famousteacher/submitFamousteacherArticlemsg',{
              "title":this.form.name,
               "autor":this.form.author,
-               "content":this.content,
+               "content":this.form.desc,
               "imgurl":this.img
         }).then(res=>{
           console.log(res.data)
           if(res.data.status==200) {
             alert('提交成功');
-             this.$router.push('/famousteacher')
+            this.$router.push('/famouseteacheraudit')
           }
         })
         //  name: '',

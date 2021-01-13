@@ -1,8 +1,5 @@
 <template>
   <div class="register-container">
-    <div class="background">
-      <img src="@/assets/bac.jpg" width="100%" height="100%" alt="">
-    </div>
     <div class="register_box">
       <!-- 头像区域 -->
       <div class="avatar_box">
@@ -11,7 +8,7 @@
       <!-- 注册表单区域 -->
       <el-form ref="registerFormRef" :rules="registerFormRules" :model="registerForm" label-width="0px" class="register_form">
         <!-- 用户名 -->
-        <el-form-item prop="username">
+        <el-form-item prop="username" :required="true">
           <el-input v-model="registerForm.username" prefix-icon="el-icon-user-solid" placeholder="请输入账号"></el-input>
         </el-form-item>
         <!-- 密码 -->
@@ -40,8 +37,8 @@
         </el-form-item>  
         <!-- 按钮区域以及注册页面 -->
         <el-form-item class="btns">
-          <el-button type="primary" @click="register">注册</el-button>
-          <router-link to="/login" class="f_link"><el-link type="primary">已有账号，立即登录</el-link></router-link>
+          <el-button type="primary" @click="login">注册</el-button>
+          <router-link to="/login" class="f_link"><el-link type="primary">已有账号，立即登陆</el-link></router-link>
         </el-form-item>
       </el-form>
     </div>
@@ -49,18 +46,10 @@
 </template>
 
 <script>
+
 export default {
   name: "RegisterIndex",
   data() {
-    var validaterepwd = (registerFormRules, value, callback) => {
-      if (value === '') {
-        callback(new Error('请再次输入密码'));
-      } else if (value !== this.registerForm.pwd) {
-        callback(new Error('两次输入密码不一致!'));
-      } else {
-        callback();
-      }
-    };
     return {
       // 这是注册表单的数据绑定对象
       registerForm: {
@@ -97,11 +86,10 @@ export default {
         ],
         repwd: [
           { required: true, message: '请再次输入密码', trigger: 'blur' },
-          { min: 6, max: 10, message: '长度应在 6 到 10 个字符', trigger: 'blur' },
-          { validator: validaterepwd, trigger: 'blur' }
+          { min: 6, max: 10, message: '长度应在 6 到 10 个字符', trigger: 'blur' }
         ],
         nickname: [
-          { required: true, message: '请输入昵称', trigger: 'blur' },
+          { required: false, message: '请输入昵称', trigger: 'blur' },
           { min: 2, max: 10, message: '长度应在 2 到 10 个字符', trigger: 'blur' }
         ],
         phone: [
@@ -144,46 +132,36 @@ export default {
     };
   },
   methods: {
-    register () {
-      this.$refs.registerFormRef.validate(valid => {
-        if(!valid){
-          this.$message.warning("您填写的信息不符合要求,请按要求填写!");
-          return;
-        }
-        else{
-            this.axios.post('http://127.0.0.1:8080/login/register',{
-            username :this.registerForm.username,
-            nickname :this.registerForm.nickname,
-            phone :this.registerForm.phone,
-            pwd :this.registerForm.pwd,
-            school :this.registerForm.school,
-            parentname :this.registerForm.parentname })
-              .then((ret) => {
-                if(ret.data==0) {
-                  this.$message.warning("用户名存在,请重新输入!");
-                  setTimeout(() => {
-                    this.$router.go(0);//当前路由刷新
-                  }, 1000);
-                }
-                else {
-                  this.$message.success("注册成功!");
-                }
-              })
-        }
-      })
+
+    login() {
+        return this.axios.post('http://localhost:8080/login/register',{
+        
+          
+          "username":this.registerForm.username,
+          "nickname":this.registerForm.nickname,
+          "phone":this.registerForm.phone,
+          "pwd":this.registerForm.pwd,
+          "school":this.registerForm.school,
+          "parentname":this.registerForm.parentname         })
+        .then(ret => {
+          if(ret.data==0) {
+            alert('用户名存在,请重新输入');
+            setTimeout(() => {
+               
+               this.$router.go(0);//当前路由刷新
+            }, 1000);
+            
+          }
+          else {
+            alert('注册成功');
+          }
+        })
     }
   }
 };
 </script>
 
 <style lang="less" scoped>
-.background{
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
-}
-
 .register_box {
   width: 450px;
   height: 700px;
@@ -214,7 +192,7 @@ export default {
 
   .f_link{
       position: relative;
-      left: 32%;
+      left: 30%;
   }
 }
 

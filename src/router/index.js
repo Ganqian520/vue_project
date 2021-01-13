@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 //在 vuecli创建的项目中@表示src目录
 import Login from '@/views/login'
 import Register from '@/views/register'
+import Findpwd from '@/views/findpwd'
 import Index from '../views/index/Index.vue'
 import Topbar from '../components/Topbar.vue'
 import Footer from '../components/Footbar.vue'
@@ -17,6 +18,7 @@ import FamouseteacherAudit from '../views/FamousTeacherAudit.vue'
 import SubmitTeacher from '../views/famousteacher/Submit.vue'
 import Detail1 from '../views/famousteacher/Detail1.vue'
 import HA from '../views/123.vue'
+<<<<<<< HEAD
 import hsa from '../views/Broadcast.vue'
 import ri from '../views/13.vue'
 import hdsq from '../views/huodongshenqing.vue'
@@ -69,6 +71,12 @@ const routes = [
 		name:'红领巾广播'
 	},
 	{
+=======
+Vue.use(VueRouter)
+
+// 路由配置表
+const routes = [{
+>>>>>>> parent of 28027cf... 123
 	path:'/123',
 	component:HA
 },
@@ -82,8 +90,7 @@ const routes = [
 	},
 	{
 			path:'/famouseteacheraudit',
-			component:FamouseteacherAudit,
-			name:'普通用户'
+			component:FamouseteacherAudit
 	},
 	{
 		path:'/detail',
@@ -132,6 +139,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/findpwd',
+    name: 'findpwd',
+    component: Findpwd
   }
 ]
 

@@ -36,20 +36,20 @@
 				this.$router.push('/detail1')
 			},
 			pass(id){
-				return this.axios.post('http://127.0.0.1:8080/famousteacher/auditsetstatu_1',{
+				return this.axios.post('http://localhost:8080/famousteacher/auditsetstatu_1',{
 					'id':id
 				}) //当页面加载时,返回
         			.then(ret => {
 						if(ret.data.status==200){
 							alert('审核通过')
-							this.$router.push('/famouseteacheraudit')
+							this.$router.go(0)
 						}
 					
 				})
 			}	
 		},
 		mounted() {
-		return this.axios.post('http://127.0.0.1:8080/famousteacher/getauditmsg') //当页面加载时,返回
+		return this.axios.post('http://localhost:8080/famousteacher/getauditmsg') //当页面加载时,返回
         .then(ret => {
 			this.datalist=ret.data;
 			console.log(ret.data);

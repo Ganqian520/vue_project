@@ -42,7 +42,7 @@
 		/* height: 1200px; */
 	}
 	main{
-		width: 100%;
+		width: 750px;
 		height: 100%;
 		/* border: 1px solid black; */
 		background-color: white;
