@@ -4,10 +4,14 @@
 			<div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<img :src="data.imgurl" class="l" />
 =======
 			<img src="" class="l" />
 >>>>>>> parent of c72b53a... 改动
+=======
+			<img src="../../../public/imgs/1.jpg" class="l" />
+>>>>>>> parent of fd13eab... 改动3
 =======
 			<img src="../../../public/imgs/1.jpg" class="l" />
 >>>>>>> parent of fd13eab... 改动3
@@ -18,12 +22,18 @@
 			</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
 =======
 			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
 				<span style="margin-right: 20px;display: block;color: #999999;">名师指导：提高小学生的作文能力的基本途径，一篇文章怎样开头，采用哪种方法，一定要从文章中心表达的需要出发，适应不同体裁的特点做到新颖明快，言简意赅。</span>
 			</div>
 >>>>>>> parent of c72b53a... 改动
+=======
+			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
+				<span style="margin-right: 20px;display: block;color: #999999;">{{data.content}}</span>
+			</div>
+>>>>>>> parent of fd13eab... 改动3
 =======
 			<div style="position: absolute;top: 70px;text-align: left;left: 190px;">
 				<span style="margin-right: 20px;display: block;color: #999999;">{{data.content}}</span>

@@ -15,6 +15,7 @@ import UserManage from '../views/UserManage.vue'
 import PowerManage from '../views/PowerManage.vue'
 import Detail from '../views/famousteacher/Detail.vue'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import FamouseteacherAudit from '../views/FamousTeacherAudit.vue'
 import SubmitTeacher from '../views/famousteacher/Submit.vue'
 import Detail1 from '../views/famousteacher/Detail1.vue'
@@ -107,6 +108,12 @@ const routes = [{
 			path:'/famouseteacheraudit',
 			component:FamouseteacherAudit
 	},
+=======
+Vue.use(VueRouter)
+
+// 路由配置表
+const routes = [
+>>>>>>> parent of fd13eab... 改动3
 =======
 Vue.use(VueRouter)
 
