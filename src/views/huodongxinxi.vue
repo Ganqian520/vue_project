@@ -1,21 +1,21 @@
 <template>
 	<div id="box">
-		
-		
-		
+				
 		<main>
 			<el-tabs v-model="activeName" @tab-click="handleClick">
 			    <el-tab-pane label="全部文章" name="all" >
 					<articlecontent ></articlecontent>
 				</el-tab-pane>
-		
+
 			  </el-tabs>
+		
 		</main>
+	
 	</div>
 </template>
 
 <script>
-	import articlecontent from './famousteacher/Audit.vue'
+	import articlecontent from './famousteacher/Articlecontent6.vue'
   export default {
     data() {
       return {
@@ -30,7 +30,10 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
-      }
+	  },
+	  submit(){
+		  this.$router.push('/submitteacher')
+	  }
     }
   };
 </script>
@@ -42,7 +45,7 @@
 		/* height: 1200px; */
 	}
 	main{
-		width: 100%;
+     	width: 100%;;
 		height: 100%;
 		/* border: 1px solid black; */
 		background-color: white;

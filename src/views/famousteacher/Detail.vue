@@ -1,7 +1,8 @@
 <template>
-<div>
+<div style="background:white">
         <div style="min-height:400px;text-align:left;"> 
-            {{this.content}}
+            <p v-html="content"></p>
+           
       </div>  
 </div>
 </template>
@@ -27,7 +28,7 @@ export default {
     //     }
     // },
     mounted() {
-		return this.axios.post(`http://localhost:8080/famousteacher${this.api}`) //当页面加载时,返回
+		return this.axios.post(`http://127.0.0.1:8080/famousteacher${this.api}`) //当页面加载时,返回
         .then(ret => {
            console.log(ret.data)
             this.datalist = ret.data
@@ -41,3 +42,6 @@ export default {
 		}
 }
 </script>
+<style scoped>
+
+</style>

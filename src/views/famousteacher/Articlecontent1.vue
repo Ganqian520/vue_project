@@ -1,25 +1,23 @@
 <template>
+<!-- guangbo -->
 	<div id="box" >
-		<div id="content" v-for="data in datalist" :key="data.id"  @click="enterDetail(data.id)" >
+		<div id="content" v-for="data in datalist" :key="data.id"  >
 			<div>
 			<img :src="data.imgurl" class="l" />
+			
 			</div>
 			<div class="clear">
-				<span class="l" style="font-size: 18px;font-weight: bold;" >{{data.title}}</span>
-				<i class="el-icon-time r">{{data.time}}</i>
+				<span class="l" style="font-size: 18px;font-weight: bold;">{{data.title}}</span>
+				
 			</div>
 			
 			<div style="position: absolute;top: 140px;text-align: left;left: 190px;color: #999999;">
-				<i class="el-icon-user-solid" style="font-size: 18px;"></i>
+				<audio :src="data.broadcasturl"  controls>	</audio>
 				<span style="margin:0 10px;">{{data.autor}}</span>
-				<el-button @click="pass(data.id)">通过</el-button>
+				
 			</div>
 		</div>
-		
-		
-	
-	
-		
+			
 	</div>
 </template>
 
@@ -33,23 +31,23 @@
 		methods:{
 			enterDetail(id){
 				localStorage.contentId = id
-				this.$router.push('/detail1')
-			},
-			pass(id){
-				return this.axios.post('http://127.0.0.1:8080/famousteacher/auditsetstatu_1',{
-					'id':id
-				}) //当页面加载时,返回
-        			.then(ret => {
-						if(ret.data.status==200){
-							alert('审核通过')
-							this.$router.push('/famouseteacheraudit')
-						}
-					
-				})
-			}	
+				this.$router.push('/detail')
+			}
 		},
 		mounted() {
-		return this.axios.post('http://127.0.0.1:8080/famousteacher/getauditmsg') //当页面加载时,返回
+			// this.axios.defaults.common["token"]=localstorage.token;
+		return this.axios.post('http://127.0.0.1:8080/broadcast/showAllMsg',
+		{
+			// headers:{
+			// 	'token':localStorage.token
+			// 	},
+			// data:{
+			// 	'token':localStorage.token
+			// },
+			// 'token':localStorage.token	
+			
+		}
+		) //当页面加载时,返回
         .then(ret => {
 			this.datalist=ret.data;
 			console.log(ret.data);

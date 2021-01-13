@@ -17,7 +17,7 @@
   export default {
     data () {
       return {
-        banners: [ '../imgs/1.jpg', '../imgs/2.jpg', '../imgs/3.jpg' ],
+        banners: [ '../imgs/001img.jpg', '../imgs/002img.jpg', '../imgs/003img.jpg' ],
         swiperOption: {
 			loop:true,
             pagination: {

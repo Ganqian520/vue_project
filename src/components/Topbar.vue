@@ -1,6 +1,6 @@
 <template>
 	<div id="box">
-		<div class="circle l"></div>
+		
 		<el-menu :default-active="$route.path" class="el-menu-demo l" mode="horizontal"  router >
 			<el-menu-item index="/index">
 				首页
@@ -11,12 +11,21 @@
 			   	名师名医
 			   </el-menu-item>
 			   
-			   <el-menu-item index="/">
-			   	支援活动
+			   <el-menu-item index="/hd">
+			   	志愿活动
 			   </el-menu-item>		
-			   <el-menu-item index="/">
+			   <el-menu-item index="/hdsq">
 			   	申请活动
+			   </el-menu-item>
+			   <el-menu-item index="/12">
+			   	红领巾广播
+			   </el-menu-item>	
+			   		<el-menu-item index="/hdgl">
+			   	我管理的活动
 			   </el-menu-item>		
+			   		<el-menu-item index="/hdxx">
+			   	我加入的活动
+			   </el-menu-item>
 			</el-submenu>
 			
 			<el-submenu index="2" v-if="assShow">
@@ -25,8 +34,11 @@
 			   <el-menu-item index="/famouseteacheraudit">
 			   	审核名师名医
 			   </el-menu-item>
-			   <el-menu-item index="/">
+			   <el-menu-item index="/hdsh">
 			   	审核活动
+			   </el-menu-item>	
+			   <el-menu-item index="/13">
+			   	上传广播
 			   </el-menu-item>			
 			</el-submenu>
 	

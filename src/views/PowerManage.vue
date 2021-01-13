@@ -1,7 +1,7 @@
 <template>
 		<el-container>
 		  <el-header>
-			  <el-page-header  @back="back()" content="权力管理">
+			  <el-page-header  @back="back()" content="权限管理">
 			  </el-page-header>
 			 
 		  </el-header>
@@ -99,7 +99,7 @@
 	      };
 		},
 		mounted:function(){
-     	return this.axios.post('http://localhost:8080/role/getAll') //当页面加载时,返回
+     	return this.axios.post('http://127.0.0.1:8080/role/getAll') //当页面加载时,返回
         .then(ret => {
 			this.tableData =ret.data
 			//this.radio=ret.data.roleid
@@ -111,7 +111,7 @@
 			del(userid,roleid){
 					console.log(userid)
 					console.log(roleid)
-					return this.axios.post('http://localhost:8080/role/delRoleFromUser',{
+					return this.axios.post('http://127.0.0.1:8080/role/delRoleFromUser',{
 						'userid': userid,
 						'roleid':roleid
 					}).then(res=>{
@@ -123,7 +123,7 @@
 			editPower(){
 				// console.log('role',this.radio)
 				// console.log('userid',this.selectUserId)
-				return this.axios.post('http://localhost:8080/role/addRoleToUser',{
+				return this.axios.post('http://127.0.0.1:8080/role/addRoleToUser',{
 					userid : this.selectUserId,
 					roleid : this.radio
 				}).then(res=>{
@@ -150,7 +150,7 @@
 			deleteRole(data){
 				console.log(data)
 				
-				return this.axios.post('http://localhost:8080/role/deleteRole',{
+				return this.axios.post('http://127.0.0.1:8080/role/deleteRole',{
 					'id' : data
 				}).then(res=>{
 					if(res.status==200){

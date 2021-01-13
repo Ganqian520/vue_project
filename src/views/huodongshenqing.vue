@@ -4,18 +4,21 @@
   <el-form-item label="名称">
     <el-input v-model="form.name"></el-input>
   </el-form-item>
-  <el-form-item label="作者">
-    <el-input v-model="form.author"></el-input>
+  
+  <el-form-item label="内容">
+    <el-input type="textarea" v-model="form.desc"></el-input>
   </el-form-item>
- 
-   <div class="quill-box">
-  <template>
-    <quill-editor v-model="content"
-                  :options="editorOption"
-                  ref="content">
-    </quill-editor>
-  </template>
-  </div>
+  <el-form-item label="地址">
+    <el-input type="textarea" v-model="form.address"></el-input>
+  </el-form-item>
+  
+  <el-form-item label="开始时间">
+    <el-input type="date" v-model="form.start"></el-input>
+  </el-form-item>
+    <el-form-item label="结束时间">
+    <el-input type="date" v-model="form.end"></el-input>
+  </el-form-item>
+
   <el-form-item>
       标题图片
       <el-upload :on-success="geturl"
@@ -36,47 +39,24 @@
 </el-form>
 
     </div>
-   
 </template>
 <script>
-import { quillEditor, Quill } from 'vue-quill-editor'
-const toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],
-  ['blockquote', 'code-block'],
-  [{'list': 'ordered'}, {'list': 'bullet'}],
-  [{'indent': '-1'}, {'indent': '+1'}],
-  [{'color': []}, {'background': []}],
-  [{'align': []}],
-  ['link', 'image'],
-  ['clean'],
-  [{'size': ['small', false, 'large', 'huge']}],
-  [{'header': [1, 2, 3, 4, 5, 6, false]}],
-  [{'font': []}]
-]
   export default {
-     components: {
-    'quill-editor': quillEditor
-  },
     data() {
       return {
-        content:'',
            dialogImageUrl: '',
         dialogVisible: false,
         form: {
           name: '',
           author:'',
           url:'',
-          desc: ''
+          desc: '',
+          people:'',
+          start:'',
+          end:'',
+          address:''
         },
-        img:[],
-        editorOption: {
-        placeholder: '提示语',
-        modules: {
-          toolbar: {
-            container: toolbarOptions,
-          }
-        }
-      }
+        img:[]
       }
     },
     methods: {
@@ -94,11 +74,15 @@ const toolbarOptions = [
       },
       onSubmit() {
         
-       return  this.axios.post('http://127.0.0.1:8080/famousteacher/submitFamousteacherArticlemsg',{
+       return  this.axios.post('http://127.0.0.1:8080/Activity/submitActivity',{
              "title":this.form.name,
-              "autor":this.form.author,
-               "content":this.content,
-              "imgurl":this.img
+              "organizerusername":localStorage.username,
+               "content":this.form.desc,
+              "titlepictureurl":this.img,
+              "maxpeople":'',
+              "starttime":this.form.start,
+            "endtime":this.form.end,
+            "address":this.form.address
         }).then(res=>{
           console.log(res.data)
           if(res.data.status==200) {

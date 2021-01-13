@@ -37,7 +37,7 @@
 			}
 		},
 		mounted() {
-		return this.axios.post('http://localhost:8080/famousteacher/getmsg') //当页面加载时,返回
+		return this.axios.post('http://127.0.0.1:8080/famousteacher/getmsg') //当页面加载时,返回
         .then(ret => {
 			this.datalist=ret.data;
 			console.log(ret.data);

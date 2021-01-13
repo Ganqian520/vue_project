@@ -42,7 +42,7 @@
         			.then(ret => {
 						if(ret.data.status==200){
 							alert('审核通过')
-							this.$router.push('/famouseteacheraudit')
+							this.$router.go(0)
 						}
 					
 				})

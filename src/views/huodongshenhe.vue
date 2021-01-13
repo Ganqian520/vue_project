@@ -5,17 +5,19 @@
 		
 		<main>
 			<el-tabs v-model="activeName" @tab-click="handleClick">
-			    <el-tab-pane label="全部文章" name="all" >
+			    <el-tab-pane label="全部活动" name="all" >
 					<articlecontent ></articlecontent>
 				</el-tab-pane>
-		
+
 			  </el-tabs>
+		
 		</main>
+	
 	</div>
 </template>
 
 <script>
-	import articlecontent from './famousteacher/Audit.vue'
+	import articlecontent from './famousteacher/Articlecontent3.vue'
   export default {
     data() {
       return {
@@ -30,7 +32,10 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
-      }
+	  },
+	  submit(){
+		  this.$router.push('/submitteacher')
+	  }
     }
   };
 </script>
