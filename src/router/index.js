@@ -10,6 +10,7 @@ import Famouseteacher from '../views/FamousTeacher.vue'
 import Famousedocor from '../views/FamousDocor.vue'
 import Admin from '../views/Admin.vue'
 import UserManage from '../views/UserManage.vue'
+<<<<<<< HEAD
 import PowerManage from '../views/PowerManage.vue'
 import Detail from '../views/famousteacher/Detail.vue'
 import FamouseteacherAudit from '../views/FamousTeacherAudit.vue'
@@ -23,11 +24,14 @@ import hd from '../views/huodong.vue'
 import hdsh from '../views/huodongshenhe.vue'
 import hdgl from '../views/huodongguanli.vue'
 import hdxx from '../views/huodongxinxi.vue'
+=======
+>>>>>>> parent of c72b53a... 改动
 Vue.use(VueRouter)
 
 // 路由配置表
 const routes = [
 	{
+<<<<<<< HEAD
 		path:'/hdxx',
 		component:hdxx,
 		name:'我加入的活动'
@@ -91,6 +95,8 @@ const routes = [
 		component:PowerManage
 	},
 	{
+=======
+>>>>>>> parent of c72b53a... 改动
 		path:'/usermanage',
 		component:UserManage
 	},

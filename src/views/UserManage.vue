@@ -1,7 +1,7 @@
 <template>
 		<el-container>
 		  <el-header>
-			  <el-page-header  @back="back()" content="角色管理">
+			  <el-page-header  content="角色管理">
 			  </el-page-header>
 			 
 		  </el-header>
@@ -22,10 +22,10 @@
 					prop="id"
 					  label="id"
 					  width="180"
-					  align="center"
-					  
-					  >
-					  
+					  align="center">
+					  <template slot-scope="scope">					      
+					          <span style="margin-left: 10px">{{ scope.$index+1 }}</span>
+					        </template>
 					</el-table-column>
 				    <el-table-column
 				      prop="rolename"
@@ -45,7 +45,7 @@
 					  <template slot-scope="scope">
 					  					 
 					 <el-button type="primary" icon="el-icon-edit" @click="show(scope.$index)" circle></el-button>
-					 <el-button type="danger" icon="el-icon-delete" @click="deleteRole(scope.row.id)" circle></el-button>
+					 <el-button type="danger" icon="el-icon-delete" @click="deleteRole(scope.$index)" circle></el-button>
 					</template>
 					 
 					</el-table-column>
@@ -115,15 +115,12 @@
 		mounted:function(){
      	return this.axios.post('http://127.0.0.1:8080/role/findAll') //当页面加载时,返回
         .then(ret => {
-			console.log(ret.data);
-          this.tableData=ret.data.context;console.log(this.tableData)
+          this.tableData=ret.data.context;
         })
     },
 		methods:{
 			
-			back(){
-				this.$router.push('/index')
-			},
+    	
 			show(data){
 				// console.log(data)
 				this.temp =	data
@@ -155,6 +152,7 @@
 					desc:''
 				}
 			},
+<<<<<<< HEAD
 			deleteRole(data){
 				console.log(data)
 				
@@ -167,6 +165,10 @@
 					}
 				
 				})
+=======
+			deleteRole(){
+				this.tableData.splice(this.temp,1)
+>>>>>>> parent of c72b53a... 改动
 			}
 			
 		},

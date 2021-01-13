@@ -34,7 +34,7 @@ export default {
 	},
 	methods: {
 	  getPath(){
-		  if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'||this.$route.path==='/powermanage'){
+		  if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'){
 			  this.isShow=true
 		  }else{
 			  this.isShow=false
@@ -43,8 +43,13 @@ export default {
 	  }
 	},
 	mounted() {
+<<<<<<< HEAD
 		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'||this.$route.path==='/powermanage'){
 			this.isShow=true
+=======
+		if(this.$route.path==='/login'||this.$route.path==='/register'||this.$route.path==='/admin'||this.$route.path==='/usermanage'){
+					  this.isShow=true
+>>>>>>> parent of c72b53a... 改动
 		}else{
 			this.isShow=false
 		}
