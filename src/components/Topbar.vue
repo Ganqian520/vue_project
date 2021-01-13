@@ -8,9 +8,11 @@
 			 <el-submenu index="1" v-if="userShow">
 			    <template slot="title">{{$route.name | showName}}</template>
 			    <el-menu-item index="/famousteacher">
-			   	名师名医
+			   	名师堂
 			   </el-menu-item>
-			   
+			   <el-menu-item index="/famousedocor">
+			   	名医馆
+			   </el-menu-item>
 			   <el-menu-item index="/">
 			   	支援活动
 			   </el-menu-item>		
@@ -20,10 +22,12 @@
 			</el-submenu>
 			
 			<el-submenu index="2" v-if="assShow">
-			    <template slot="title">管理员</template>
-			    
-			   <el-menu-item index="/famouseteacheraudit">
-			   	审核名师名医
+			    <template slot="title">辅导员</template>
+			    <el-menu-item index="/">
+			   	审核名医馆
+			   </el-menu-item>
+			   <el-menu-item index="/">
+			   	审核名师堂
 			   </el-menu-item>
 			   <el-menu-item index="/">
 			   	审核活动
@@ -37,9 +41,6 @@
 			   </el-menu-item>
 			   <el-menu-item index="/usermanage">
 				用户管理
-			   </el-menu-item>
-			   <el-menu-item index="/123">
-				日志管理
 			   </el-menu-item>
 			  			
 			</el-submenu>

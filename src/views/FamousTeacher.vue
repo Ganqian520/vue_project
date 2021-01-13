@@ -51,6 +51,7 @@
 					<articlecontent ></articlecontent>
 				</el-tab-pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 			    <el-tab-pane label="数学" name="math">数学</el-tab-pane>
@@ -58,10 +59,11 @@
 			    <el-tab-pane label="英语" name="english">英语</el-tab-pane>
 				<el-tab-pane label="科学" name="science">科学</el-tab-pane>
 >>>>>>> parent of c72b53a... 改动
+=======
+		
+>>>>>>> parent of fd13eab... 改动3
 			  </el-tabs>
-			  <el-button @click="submit()">申请文章</el-button>
 		</main>
-	
 	</div>
 </template>
 
@@ -79,10 +81,7 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
-	  },
-	  submit(){
-		  this.$router.push('/submitteacher')
-	  }
+      }
     }
   };
 </script>
